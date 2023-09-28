@@ -56,5 +56,34 @@ Arrays = (
     1 to: 5 do: [:i | (arr at: i) = 1 ifFalse: [self error: 'wrong result']].
     ^ arr at: 3
   )
+
+  testAtPut = (
+    | arr |
+    arr := Array new: 2.
+    arr at: 1 put: 1.
+    arr at: 2 put: 2.
+
+    1 to: 2 do: [:i|
+      (arr at: i) = i ifFalse: [self error: 'should be i']
+    ].
+
+    ^ arr at: 1
+  )
+
+  testPutDifferentTypes = (
+    | arr singleton |
+
+    singleton := Array new: 1.
+    singleton at: 1 put: true.
+
+    arr := Array new: 5.
+    arr at: 1 put: 1.
+    arr at: 2 put: false.
+    arr at: 3 put: 'String'.
+    arr at: 4 put: #Symbol.
+    arr at: 5 put: singleton.
+
+    ^ arr at: 5
+  )
   
 )
