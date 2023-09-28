@@ -83,6 +83,12 @@ Arrays = (
     arr at: 4 put: #Symbol.
     arr at: 5 put: singleton.
 
+    (arr at: 1) = 1 ifFalse: [self error: 'should be 1'].
+    (arr at: 2) = false ifFalse: [self error: 'should be false'].
+    (arr at: 3) = 'String' ifFalse: [self error: 'should be \'String\''].
+    (arr at: 4) = #Symbol ifFalse: [self error: 'should be #Symbol'].
+    (arr at: 5) = singleton ifFalse: [self error: 'should be singleton'].
+
     ^ arr at: 5
   )
   
