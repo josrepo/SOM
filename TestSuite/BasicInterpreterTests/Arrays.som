@@ -91,5 +91,19 @@ Arrays = (
 
     ^ arr at: 5
   )
+
+  testFirstLast = (
+    | arr |
+    arr := Array new: 3.
+
+    1 to: 3 do: [:i|
+      arr at: i put: i.
+    ].
+
+    (arr first) = 1 ifFalse: [self error: 'should be 1'].
+    (arr last) = 3 ifFalse: [self error: 'should be 3'].
+
+    ^ arr at: 1
+  )
   
 )
