@@ -127,7 +127,7 @@ Arrays = (
     arr := Array new: 5.
 
     arr length = 5 ifFalse: [self error: 'should be 5'].
-    (arr at: 1) class = nil ifFalse: [self error: 'should be nil'].
+    (arr at: 1) ifNotNil: [self error: 'should be nil'].
 
     1 to: 5 do: [:i|
       arr at: i put: i.
