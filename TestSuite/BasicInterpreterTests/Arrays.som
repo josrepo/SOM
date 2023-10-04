@@ -105,5 +105,14 @@ Arrays = (
 
     ^ arr at: 1
   )
-  
+
+  testEmpty = (
+    | arr |
+    arr := Array new: 0.
+
+    arr length = 0 ifFalse: [self error: 'should be 0'].
+
+    ^ 0
+  )
+
 )
