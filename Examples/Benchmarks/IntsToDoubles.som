@@ -1,0 +1,18 @@
+IntsToDoubles = Benchmark (
+
+    benchmark = (
+        | arr |
+
+        1 to: 100 do: [ :i |
+            arr := Array new: 100 withAll: [1].
+            arr at: 99 put: 1.1.
+        ].
+
+        ^ arr length
+    )
+
+    verifyResult: result = (
+        ^ self assert: 100 equals: result
+    )
+
+)
