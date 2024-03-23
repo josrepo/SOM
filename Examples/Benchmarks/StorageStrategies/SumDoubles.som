@@ -1,0 +1,18 @@
+SumDoubles = Benchmark (
+
+  benchmark = (
+    | v sum |
+    v := Vector new.
+    sum := 0.
+
+    1 to: 100000 do: [ :i | v, (i * 1.0) ].
+    v do: [ :e | sum := sum + e ].
+
+    ^ sum
+  )
+
+  verifyResult: result = (
+    ^ self assert: 5000050000.0 equals: result
+  )
+
+)
