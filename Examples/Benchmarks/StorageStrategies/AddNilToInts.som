@@ -1,0 +1,17 @@
+AddNilToInts = Benchmark (
+
+  benchmark = (
+    | v |
+    v := Vector new.
+
+    1 to: 100000 do: [ :i | v, i ].
+    v, nil.
+
+    ^ v size
+  )
+
+  verifyResult: result = (
+    ^ self assert: 100001 equals: result
+  )
+
+)
