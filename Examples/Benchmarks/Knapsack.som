@@ -407,11 +407,11 @@ Knapsack = Benchmark (
         vs, 55, 56, 7, 46, 66, 20, 73, 49, 54, 30, 65, 47, 18, 98, 16, 84, 8, 44, 2, 9, 35, 85, 99, 7, 16.
         vs, 80, 12, 74, 36, 24, 97, 25, 60, 37, 72, 34, 91, 33, 22, 89, 96, 9, 36, 37, 51, 45, 9, 78, 51, 62.
 
-        ^ self knapsack: 10001 weights: ws values: vs
+        ^ self knapsack: 501 weights: ws values: vs
     )
 
     verifyResult: result = (
-        ^ self assert: 57476 equals: result
+        ^ self assert: 11991 equals: result
     )
 
     knapsack: goal weights: w values: v = (
